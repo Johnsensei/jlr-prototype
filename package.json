@@ -1,0 +1,29 @@
+{
+  "name": "jlr-prototype",
+  "version": "1.0.0",
+  "description": "Portfolio project for Nucamp Bootstrap Course",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnsensei/jlr-prototype.git"
+  },
+  "author": "John Gale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Johnsensei/jlr-prototype/issues"
+  },
+  "homepage": "https://github.com/Johnsensei/jlr-prototype#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
+  }
+}
