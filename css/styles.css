@@ -1,14 +1,19 @@
+@font-face { font-family: RiiTegakiFude; src: url('RiiT_F.otf'); } 
+      h1 {
+         font-family: RiiTegakiFude
+      }
+
 body {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "RiiTegakiFude" }
 
 h1, h2, h3 {
-  font-family: "Lobster", cursive; }
+  font-family: "RiiTegakiFude"}
 
 h2 {
-  color: #3046C5; }
+  color: black; }
 
 header h2 {
-  color: #CEC8FF; }
+  color: black; }
 
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
@@ -17,8 +22,8 @@ header h2 {
 .jumbotron {
   margin: 0;
   padding: 30px;
-  background-image: linear-gradient(to right, #5637dd, #3046C5, #60106b);
-  color: white; }
+  background-image: linear-gradient(to right, rgba(185, 120, 67, 1), rgba(197, 141, 90, 1), rgba(218, 175, 121, 1));
+  color: black; }
 
 .row-content {
   padding: 50px 0;
