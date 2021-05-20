@@ -4,7 +4,9 @@
       }
 
 body {
-  font-family: "RiiTegakiFude" }
+  font-family: "RiiTegakiFude";
+  background-color: rgba(222, 202, 170, 1);
+}
 
 h1, h2, h3 {
   font-family: "RiiTegakiFude"}
@@ -14,6 +16,10 @@ h2 {
 
 header h2 {
   color: black; }
+
+footer{
+  background-image: linear-gradient(to right, rgba(185, 120, 67, 1), rgba(197, 141, 90, 1), rgba(218, 175, 121, 1));
+}
 
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
