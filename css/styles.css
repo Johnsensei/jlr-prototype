@@ -18,6 +18,8 @@ header h2 {
   color: black; }
 
 footer{
+  /* margin-top: 1; */
+  /* padding-top: 1; */
   background-image: linear-gradient(to right, rgba(185, 120, 67, 1), rgba(197, 141, 90, 1), rgba(218, 175, 121, 1));
 }
 
