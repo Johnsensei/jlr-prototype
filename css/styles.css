@@ -39,6 +39,11 @@ footer{
   font-size: 2rem;
  }
 
+ .btn-register{
+   background-color: rgba(222, 202, 170, 1);
+   color: white;
+ }
+
 .row-content {
   padding: 50px 0;
   border-bottom: 1px ridge;
