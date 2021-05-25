@@ -58,10 +58,10 @@ a, a:hover {
   text-decoration: none; }
 
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(177, 124, 73, 0.75); }
 
-.carousel {
-  border: solid #5637dd; }
+/* .carousel {
+  border: solid #5637dd;} */
 
 #carouselButton {
   position: absolute;
