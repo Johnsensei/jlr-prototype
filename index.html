@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
+    <!-- build:css css/main.css -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <!-- endbuild -->
 
     <title>Japanese Language Room</title>
 </head>
@@ -27,15 +30,62 @@
                 </div>
                 <div class="col col-md-4 col-lg-2">
                     <a  role="button" class="btn btn-lg btn-register mt-4" id="registerButton">Register for a Class</a>
-                </div>
-                <!-- TODO: Add registration modal. -->
+                </div> 
             </div>
         </div>
     </header>
+   
+    <div id="registerModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Register for a Class</h3>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+
+                        <form>
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label">Available Classes</label>
+                                    <div class="col">
+                                        <select class="form-control" name="classSelect" id="classSelect">
+                                            <option>Select...</option>
+                                            <option>Japanese 1.0</option>
+                                            <option>Japanese 1.1</option>
+                                            <option>Japanese 1.2</option>
+                                        </select>
+                                    </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="col-form-label" for="studentName">Student Name</label>
+                                    <input type="name" class="form-control form-control-sm" id="studentName" placeholder="First Last">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="col-form-label" for="studentAge">Student Age</label>
+                                    <input type="age" class="form-control form-control-sm" id="studentAge" placeholder="Must be 18 or older.">
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <button class="btn btn-secondary" type="submit" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary" type="submit">Register</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#jlrNavbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#jlrNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="jlrNavbar">
@@ -46,6 +96,37 @@
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-mobile fa-lg"></i> Apps</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
+
+                <!-- BACKUP: Login link using Bootstrap. -->
+                <!-- <span class="navbar-text ms-auto">
+                    <a role="button" id="loginButton">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
+                </span> -->
+
+                <div id="my-signin2" class="navbar-text ms-auto"></div>
+                <script>
+                  function onSuccess(googleUser) {
+                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                  }
+                  function onFailure(error) {
+                    console.log(error);
+                  }
+                  function renderButton() {
+                    gapi.signin2.render('my-signin2', {
+                      'scope': 'profile email',
+                      'width': 240,
+                      'height': 50,
+                      'longtitle': true,
+                      'theme': 'dark',
+                      'onsuccess': onSuccess,
+                      'onfailure': onFailure
+                    });
+                  }
+                </script>
+              
+                <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
             </div>
         </div>
     </nav>    
@@ -95,7 +176,7 @@
             </div>
         </div>
 
-        <!-- TODO: The images are not aligning how I'd like. Researched. Skipping for now-->
+        <!-- ISSUE: The images are not aligning how I'd like. Researched. Skipping for now.-->
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3">
                 <h2>In-person Classes</h2>
@@ -135,7 +216,6 @@
                     </div>
                 </div>     
             </div>
-
     </div>
 
     <footer>
@@ -169,9 +249,13 @@
         </div>
     </footer>
 
+    <!-- build:js js/main.js -->
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
     
 </body>
 
