@@ -58,6 +58,11 @@ footer{
   margin-right: 80px;
 }
 
+.transparent{
+  background: transparent;
+  border: 0;
+}
+
 .tab-content{
     border: 1px solid #DDD;
     border-top: none;
